@@ -1,0 +1,58 @@
+﻿@model employee
+@{
+    ViewData["Title"] = "create";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form asp-action="create" asp-controller="home" method="post">
+
+        <div class="row mb-3">
+            <label asp-for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+
+            <label asp-for="age" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-10">
+                <input asp-for="age" class="form-control" />
+                <span asp-validation-for="age"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+
+            <label asp-for="address" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+
+            <label asp-for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+
+            <label asp-for="departmentid" class="col-sm-2 col-form-label">Department Name</label>
+            <div class="col-sm-10">
+                <select asp-for="departmentid" asp-items="ViewBag.dept as SelectList" class="form-control"></select>
+                <span asp-validation-for="departmentid"></span>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-success" />
+
+    </form>
+</div>
